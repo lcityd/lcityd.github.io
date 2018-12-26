@@ -14,28 +14,8 @@
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="blog.css" rel="stylesheet">
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      .row {
-        display: flex;
-      }
-      
-      /* Create two equal columns that sits next to each other */
-      .column {
-        flex: 50%;
-        padding: 30px;
-        height: 300px; /* Should be removed. Only for demonstration */
-      }
-      .column1 {
-        flex: 50%;
-        padding: 30px;
-        height: 300px; /* Should be removed. Only for demonstration */
-      }
-      </style>
   </head>
 
   <body>
@@ -50,7 +30,7 @@
             <a class="nav-link" href=".">Homepage <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/lcityd">Github</a>
+            <a class="nav-link" href="#">Github</a>
           </li>
 	<!--tasty internet anonymity-->
 	  <li>
@@ -59,23 +39,10 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Project Posts</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
-              <a class="dropdown-item" href="#">Hacking</a>
+              <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>          
 
-            </div>
-          </li>
-          <li class = "nav-item dropdown">
-            <a  class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown08">
-              <a class="dropdown-item" href="./US/">U.S.</a>
-              <a class="dropdown-item" href="./tech/">Technology</a>
-              <a class="dropdown-item" href="./cult/">Culture</a>
-              <a class="dropdown-item" href="./buis/">Business</a>
-              <a class="dropdown-item" href="./poli/">Politics</a>
-              <a class="dropdown-item" href="./op/">Opinion</a>
-              <a class="dropdown-item" href="./sci/">Science</a>
-              <a class="dropdown-item" href="./trav/">Travel</a>
             </div>
           </li>
         </ul>
@@ -83,26 +50,23 @@
     </nav>
 
       <div>
-        <div>
-          <h1 align="center" >KalBot's Home Of Hacking</h1>
-          <hr>
-          <div class="row">
-            <div class="column1">
-              <div align="center">
-                <h2 align="center">Articles</h2>
-                {% for post in site.posts %}
-                <p>&raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }} (<span>{{ post.date | date_to_string }}</span>)</a></p>
-              {% endfor %}
-              </div>
-            </div>
-      
-            <div class="column1">
-              <div align="center">
-                  <p>test</p>
-              </div>
+        <nav>
+	      <a href="./US/">U.S.</a>
+              <a href="./tech/">Technology</a>
+              <a href="./cult/">Culture</a>
+              <a href="./buis/">Business</a>
+              <a href="./poli/">Politics</a>
+              <a href="./op/">Opinion</a>
+              <a href="./sci/">Science</a>
+              <a href="./trav/">Travel</a>
+        </nav>
+      </div>
 
-            </div>
-          </div>
+      <div>
+        <div>
+          <h1>KalBot's Home Of Hacking</h1>
+          <p>Use this for something cool later</p>
+          <p><a href="#">Continue reading...</a></p>
         </div>
       </div>
 
@@ -114,8 +78,9 @@
               <div>Dec 22</div>
               <p>First edition of the site rolls out hopefully by this time period, if not before christmas I'll have the post system up and running, using Jeykll of course, as they seem to have really cool methods of cataloging what you're posting. </p>
 		<p> I'll find a way to post the new posts all in order here, instead of having links to them at the top corner, I'll probably use those for information links and special posts.</p><ul class="posts">
-            <hr>
-
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
 </ul>
               <a href="#">Continue reading</a>
             </div>
@@ -126,25 +91,8 @@
     <main>
       <div>
         <div>
-	<hr>  
-    <h2>Security</h2>
-    
-    <div class="row">
-      <div class="column">
-        <h2>Privacy & Encryption HOWTO's</h2>
-        <li><a href="https://www.deepdotweb.com/2018/02/28/configure-tor-properly/">How To Use Tor</a></li>
-        <li><a href="https://www.cloudwards.net/how-to-encrypt-your-hard-drive/">How to Encrypt Your Hard Drives</a></li>
-        <li><a href="https://protonvpn.com/support/install-windows-vpn/">Use ProtonVPN (see my post on why they're so great)</a></li>
-        <li><a href="https://www.howtogeek.com/115483/htg-explains-learn-how-websites-are-tracking-you-online/">Be Aware</a></li>
-      </div>
+	<hr>
 
-      <div class="column">
-        <h2>Links to Cybersecurity Software</h2>
-        <li><a href="https://www.kali.org/">Kali Linux (Popular with Pentesters)</a></li>
-        <li><a href="https://www.gnu.org/home.en.html">GNU/Linux Operating System</a></li>
-        <li><a href="https://openvpn.net/download-open-vpn/">OpenVPN (Used in parallel with ProtonVPN)</a></li>
-      </div>
-    </div>
           <div>
             <h2>How to Remain Private</h2>
 
